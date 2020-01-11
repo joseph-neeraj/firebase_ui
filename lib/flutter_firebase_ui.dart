@@ -1,4 +1,4 @@
-library flutter_firebase_ui;
+library my_firebase_ui_2;
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
