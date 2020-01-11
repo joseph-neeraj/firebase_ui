@@ -14,10 +14,12 @@ class LoginView extends StatefulWidget {
   final String twitterConsumerKey;
   final String twitterConsumerSecret;
   final FirebaseAuth auth;
+  final Function(FirebaseUser) firebaseUserCallback;
 
   LoginView({
     Key key,
     @required this.providers,
+    @required this.firebaseUserCallback,
     this.passwordCheck,
     this.twitterConsumerKey,
     this.twitterConsumerSecret,
@@ -65,13 +67,14 @@ class _LoginViewState extends State<LoginView> {
 
   _handleFacebookSignin() async {
     FacebookLoginResult result =
-        await facebookLogin.logIn(['email']);
+        await facebookLogin.logIn(['public_profile', 'email']);
     if (result.accessToken != null) {
       try {
         AuthCredential credential = FacebookAuthProvider.getCredential(
             accessToken: result.accessToken.token);
         FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
         print(user);
+        widget.firebaseUserCallback?.call(user);
       } catch (e) {
         showErrorDialog(context, e.details);
       }

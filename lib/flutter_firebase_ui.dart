@@ -11,6 +11,7 @@ export 'utils.dart';
 class SignInScreen extends StatefulWidget {
   SignInScreen({
     Key key,
+    @required this.firebaseUserCallback,
     this.title,
     this.header,
     this.footer,
@@ -31,6 +32,7 @@ class SignInScreen extends StatefulWidget {
   final String twitterConsumerKey;
   final String twitterConsumerSecret;
   final FirebaseAuth auth;
+  final Function(FirebaseUser) firebaseUserCallback;
 
   @override
   _SignInScreenState createState() => new _SignInScreenState();
@@ -68,6 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     twitterConsumerKey: widget.twitterConsumerKey,
                     twitterConsumerSecret: widget.twitterConsumerSecret,
                     auth: widget.auth ?? FirebaseAuth.instance,
+                    firebaseUserCallback: widget.firebaseUserCallback
                   )),
                   _footer
                 ],

@@ -7,6 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
 
 import 'package:my_firebase_ui_2/l10n/localization.dart';
+
 enum ProvidersTypes { email, google, facebook, twitter, phone }
 
 final GoogleSignIn googleSignIn = new GoogleSignIn();
