@@ -1,0 +1,42 @@
+name: my_firebase_ui_2
+description: Firebase UI
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_twitter_login:
+    git: git://github.com/diegoveloper/flutter_twitter_login.git
+
+  firebase_auth: ^0.15.3+1
+
+  google_sign_in: ^4.1.1
+  flutter_facebook_login: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/fb-logo.png
+    - assets/2.0x/fb-logo.png
+    - assets/3.0x/fb-logo.png
+
+    - assets/email-logo.png
+    - assets/2.0x/email-logo.png
+    - assets/3.0x/email-logo.png
+
+    - assets/go-logo.png
+    - assets/2.0x/go-logo.png
+    - assets/3.0x/go-logo.png
+
+    - assets/twitter-logo.png
+    - assets/2.0x/twitter-logo.png
+    - assets/3.0x/twitter-logo.png
